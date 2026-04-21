@@ -2,6 +2,8 @@
 # Drop columns that are not useful for prediction
 import pandas as pd
 
+def run_model():
+
 train_df = pd.read_csv("Titanic_train.csv")
 test_df = pd.read_csv("Titanic_test.csv")
 
@@ -19,5 +21,4 @@ test_df['Embarked'] = test_df['Embarked'].fillna(test_df['Embarked'].mode()[0])
 
 test_df['Fare'] = test_df['Fare'].fillna(test_df['Fare'].median())
 
-print(train_df.head())
-print(train_df.head())
+return train_df.head().to_html()
