@@ -1,10 +1,12 @@
 from flask import Flask
+from main import run_model
 
 app = Flask(__name__)
 
 @app.route("/")
 def home():
-    return "Hello, Titanic Model Running!"
+    return run_model()
 
-if __name__ == "__main__":
-    app.run(debug=True)
+@app.route("/predict")
+def predict():
+    return run_model()
